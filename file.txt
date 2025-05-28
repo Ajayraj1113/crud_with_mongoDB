@@ -1,0 +1,25 @@
+Sim = 4
+sim = 16 
+sim =   32
+
+
+----------------------FB------------------------
+name  // email // city // phone
+                        sim1 // sim2 
+                        1 Rs
+
+
+{
+    {
+        name: Ajay
+        id: 12
+    }
+    {
+        name: Ajay
+        id: 12
+    }
+    {
+        name: Ajay
+        id: 12
+    }
+}
