@@ -61,4 +61,32 @@ router.get("/final-delete/:uid", async (req, res)=>{
     }
 })
 
+router.get("/updateEmployee", async (req, res)=>{
+    try{
+        let emp = await Employee.find();
+    // let empdata = emp.map(empdata => empdata.toObject());
+    res.render("updateEmployee" , {emp});
+}catch(err){
+    console.log(err)
+}
+})
+router.get("/editEmployee/:id", async(req, res)=>{
+    try{
+        // console.log(req.params.id)
+        let employee = await Employee.findById(req.params.id);
+        console.log(employee)
+        res.render("editEmployee", {employee});
+    }catch(err){
+        console.log(err)
+    }
+})
+router.post("/updateEmp/:id", async(req, res)=>{
+    try {
+        await Employee.findByIdAndUpdate(req.params.id, req.body);
+        res.redirect("/emp/updateEmployee")
+
+    } catch (err) {
+        console.log(err);
+    }
+})
 module.exports = router
